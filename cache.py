@@ -7,18 +7,25 @@ def  dec (num) :
             r = r + p
         p = 2*p
         i = i -1
-    print(r)
     return r
 
-def bin(num,l) :
+def bin(num) :
+    global l
+    l = ''
     if num < 2 :
-     return num
+        if num == 0 :
+            l = l +'0'
+        else :
+            l = l +'1'
+        return l
     else :
-     bin(num//2,l)
-     if( num%2 == 1):
-         return l + '1'
-     else:
-        return l +'0'
+        bin(num//2)
+        if( num%2 == 1):
+         l = l +'1'
+         return l
+        else:
+         l = l +'0'
+         return l
 
 
 
@@ -31,18 +38,24 @@ class Cache :
 
     def acces(self,adr) :
             adr = dec(adr)
-            num_bloc = adr%Cache.num_blocs
-            etiq = adr // Cache.num_blocs
-            l = ''
-            etiq = bin(etiq,l)
+            num_bloc = adr//Cache.t_bloc
+            index = num_bloc % Cache.num_blocs
+            etiq = num_bloc // Cache.num_blocs
+            etiq = bin(etiq)
             print(etiq)
-            if num_bloc in Cache.contingut :
+            if (index in Cache.contingut and Cache.contingut[index] == etiq) :
                 print("hit")
-                return 1
+                return True
             else :
-                Cache.contingut[num_bloc] = etiq
+                Cache.contingut[index] = etiq
                 print("miss")
-                return 0
+                return False
 
     def escriure(self) :
-        print(Cache.contingut)
+        for i in range(Cache.num_blocs) :
+            if i in Cache.contingut :
+                print(i, ':' ,Cache.contingut[i],end = ' ')
+                print('\n')
+            else :
+                print(i,':',"buit",end = ' ')
+                print('\n')
