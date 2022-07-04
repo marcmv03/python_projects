@@ -47,15 +47,16 @@ class Cache :
                 print("hit")
                 return True
             else :
-                Cache.contingut[index] = etiq
+                if( Cache.politica == 1):
+                    Cache.contingut[index] = etiq
                 print("miss")
                 return False
 
     def escriure(self) :
         for i in range(Cache.num_blocs) :
             if i in Cache.contingut :
-                print(i, ':' ,Cache.contingut[i],end = ' ')
+                print("Bloc",i, ':' ,Cache.contingut[i],end = ' ')
                 print('\n')
             else :
-                print(i,':',"buit",end = ' ')
+                print("Bloc" ,i,':',"buit",end = ' ')
                 print('\n')
