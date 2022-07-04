@@ -4,8 +4,12 @@ print("num blocs")
 n = int(input())
 print("tamany bloc")
 t = int(input())
+<<<<<<< HEAD
 print("politica d'escriptura:")
 print(" 0: sense assignacio ,1 : amb assignacio")
+=======
+print("politica d'escriptura")
+>>>>>>> origin/master
 pol = int(input())
 c = Cache(n,t,pol)
 adr = str(input())

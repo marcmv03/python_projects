@@ -47,8 +47,12 @@ class Cache :
                 print("hit")
                 return True
             else :
+<<<<<<< HEAD
                 if Cache.politica == 1 :
                     Cache.contingut[index] = etiq
+=======
+                Cache.contingut[index] = etiq
+>>>>>>> origin/master
                 print("miss")
                 return False
 
