@@ -1,0 +1,26 @@
+from cache import *
+
+print("num blocs")
+n = int(input())
+print("tamany bloc")
+t = int(input())
+print("politica d'escriptura")
+pol = int(input())
+c = Cache(n,t,pol)
+adr = str(input())
+h = 0
+m = 0
+a = 0
+while(adr != "fi") :
+    print("lectura : 0 , escriptura : 1")
+    mod = int(input())
+    r =c.acces(adr)
+    if(r) :
+        h +=1
+    else:
+        m += 1
+    a += 1
+    adr = str(input())
+print("Contingut cache :")
+c.escriure()
+print("hit rate =",round(h/a,3),'\n',"miss rate =",round(m/a,3),'\n',end = '')
