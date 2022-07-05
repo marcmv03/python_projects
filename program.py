@@ -1,4 +1,7 @@
-a = [2,3,4,5,6,7,8,9,10,11]
+a = []
+n = input()
 
-for i in range(len(a)):
-    print (a[i] )
+for i in range(n):
+     x = input()
+     a.append(x)
+    print (a[i])
