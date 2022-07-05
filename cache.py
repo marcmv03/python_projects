@@ -1,14 +1,14 @@
 def char_to_hex(c) :
     if '0' <= c <= '9' :
-        return int(c -'0')
+        return int(c)
     elif 'A' <= c <= 'F':
-        return 10 +int(c -'A')
+        return int(10 + ord(c) - 65)
 
 def hex_to_char(num) :
     if 0 <= num <= 9 :
-        return str(num + '0')
+        return str(num)
     else :
-        return str( num + 55)
+        return chr( num + 55)
 
 def  dec (num) :
     p = 1
@@ -24,11 +24,13 @@ def hex(num) :
     global l
     l = '0x'
     if num < 16 :
-        return hex_to_char(num%16)
+        l = l + hex_to_char(num)
+        return hex_to_char(num)
     else :
         hex(num//16)
-         l = l + hex_to_char(num%16)
-         return l
+        l = l + hex_to_char(num%16)
+
+    return l
 
 
 
@@ -41,10 +43,11 @@ class Cache :
 
     def acces(self,adr) :
             adr = dec(adr)
+            print(adr)
             num_bloc = adr//Cache.t_bloc
             index = num_bloc % Cache.num_blocs
             etiq = num_bloc // Cache.num_blocs
-            etiq = bin(etiq)
+            etiq = hex(etiq)
             print(etiq)
             if (index in Cache.contingut and Cache.contingut[index] == etiq) :
                 print("hit")

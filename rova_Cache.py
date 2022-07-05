@@ -1,4 +1,4 @@
-from cache import class Cache
+from cache import  Cache
 print("num blocs")
 n = int(input())
 print("tamany bloc")
@@ -20,7 +20,7 @@ while(adr != "fi") :
     else:
         m += 1
     a += 1
-    adr = str(input("adr"))
+    adr = str(input("adr "))
 print("Contingut cache :")
 c.escriure()
 print("hit rate =",round(h/a,3),'\n',"miss rate =",round(m/a,3),'\n',end = '')
