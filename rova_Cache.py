@@ -1,5 +1,4 @@
-from cache import *
-
+from cache import class Cache
 print("num blocs")
 n = int(input())
 print("tamany bloc")
@@ -8,7 +7,7 @@ print("politica d'escriptura")
 print("0: sense assignacio ,1: amb assignacio")
 pol = int(input())
 c = Cache(n,t,pol)
-adr = str(input("adr"))
+adr = str(input("adr(hex)"))
 h = 0
 m = 0
 a = 0
