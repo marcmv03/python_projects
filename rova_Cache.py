@@ -15,7 +15,7 @@ a = 0
 while(adr != "fi") :
     print("lectura : 0 , escriptura : 1")
     mod = int(input())
-    r =c.acces(adr)
+    r =c.acces(adr,mod)
     if(r) :
         h +=1
     else:

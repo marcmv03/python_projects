@@ -36,13 +36,15 @@ class Cache :
          Cache.politica = politica
          Cache.contingut = {}
 
-    def acces(self,adr) :
+    def acces(self,adr,mod) :
             adr = dec(adr)
             num_bloc = adr//Cache.t_bloc
             index = num_bloc % Cache.num_blocs
             etiq = num_bloc // Cache.num_blocs
             etiq = bin(etiq)
             print(etiq)
+            if mod == 1 :
+                print("Escriptura a memoria")
             if (index in Cache.contingut and Cache.contingut[index] == etiq) :
                 print("hit")
                 return True
