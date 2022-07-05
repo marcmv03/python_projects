@@ -50,10 +50,14 @@ class Cache :
                 print("hit")
                 return True
             else :
-                if( Cache.politica == 1):
+
+                if Cache.politica == 1:
                     Cache.contingut[index] = etiq
                 print("miss")
                 return False
+
+                
+                
 
     def escriure(self) :
         for i in range(Cache.num_blocs) :
