@@ -1,0 +1,50 @@
+len : longitud
+tuplas :
+tuple1 = ( elemen1,element2,element3)
+poden ser de diferents tipus
+len(tuple1) -> llargada
+tuple1[index]
+tuple1[0:2] subtupla de 0 a 1
+tuple.index(elementn) -> retorna l index de l'element corresponent
+
+stirngs :
+string1 = ""
+stirng2.upper() -> transforma a majuscula
+string1.len()
+
+list : es com les tuples pero es poden modificar
+list.append(alement)
+list = [element1,element2,element3)
+list.extend([element1,element2,element3])
+list.splice(element) posa l'elemetn enmig de cada element que hi havia
+
+sets :
+set1 = {element1,element2,elementn}
+interseccio : set1 & set2
+unio :set1.union(set2)
+element1 in set1 -> busca si l'elemt esta al conjunt
+set1.add(element)
+set(llista) ->transforma la llista en un conjunt ,eliminant els repetits
+set1.issubset(set2) : diu si es un subconjunt
+set2.issuperset : diu si l'argument es un subconjunt
+
+diccionaris :
+dicc1 = {clau1:valor1,clau2:valor2...}
+a in dicc1 = retorna true si esta o 0 si no
+a[key1] = retorna el valor i si no esta afegeix una nova entrada
+a.keys() = mostra totes les claus
+
+bucles :
+ennumerate(argument) : retorna l' index
+for a in list : itera sobre els elements d' una sequencia
+for i in range(x,y) : itera desde x fins a y -1
+
+funcions :
+si no retorna res,retorna nonne(buida)
+global variable : variable global
+
+clases i ojectes :
+class nom_clase
+	def__init__(self,arguments) : constructora
+	nom_case.atribut = algo
+from nom_archiu import * -> importar tot
