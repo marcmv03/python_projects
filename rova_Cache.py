@@ -10,20 +10,22 @@ print("politica d'escriptura")
 
 pol = int(input())
 c = Cache(n,t,pol)
-adr = str(input("adr(hex)"))
 h = 0
 m = 0
 a = 0
-while(adr != "fi") :
-    print("lectura : 0 , escriptura : 1")
-    mod = int(input())
-    r =c.acces(adr,mod)
-    if(r) :
-        h +=1
-    else:
-        m += 1
-    a += 1
-    adr = str(input("adr "))
-print("Contingut cache :")
-c.escriure()
+op = str(input("comanda: "))
+while(op != "fi") :
+    if( op == "acces") :
+        print("lectura : 0 , escriptura : 1")
+        mod = int(input())
+        adr = str(input("adr(hex)"))
+        r =c.acces(adr,mod)
+        if(r) :
+            h +=1
+        else:
+            m += 1
+        a += 1
+        op = str(input("comanda: "))
+
+
 print("hit rate =",round(h/a,3),'\n',"miss rate =",round(m/a,3),'\n',end = '')

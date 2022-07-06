@@ -1,3 +1,5 @@
+from classe_bloc import *
+
 def char_to_hex(c) :
     if '0' <= c <= '9' :
         return int(c)
@@ -15,6 +17,9 @@ def  dec (num) :
     r = 0
     i = len(num)-1
     while( i >= 0) :
+        if num[i] == '1':
+            r = r + p
+        p = 2*p
         r = r +char_to_hex(num[i])*p
         p = 16*p
         i = i -1
@@ -42,6 +47,9 @@ class Cache :
          Cache.contingut = {}
 
     def acces(self,adr,mod) :
+            valor = 0
+            if(mod == 1) :
+                valor = int(input("escriu valor : "))
             adr = dec(adr)
             print(adr)
             num_bloc = adr//Cache.t_bloc
@@ -57,12 +65,15 @@ class Cache :
             else :
 
                 if Cache.politica == 1:
-                    Cache.contingut[index] = etiq
+                    Cache.contingut[index] = Bloc(self.t_bloc,etiq)
+                    self.contingut[index].escriure(valor)
                 print("miss")
                 return False
 
-                
-                
+    def escriure_contingut_bloc(self,i) :
+        if i in self.contingut :
+            self.contingut[i].llegir()
+
 
     def escriure(self) :
         for i in range(Cache.num_blocs) :
