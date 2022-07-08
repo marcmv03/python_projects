@@ -29,7 +29,7 @@ while(op != "fi") :
         print("contingut_cache:")
         c.escriure()
     elif op =="llegir_bloc":
-        i = int(input())
+        i = int(input("num bloc : "))
         c.escriure_contingut_bloc(i)
     elif op =="buidar" :
         c.buidar()
