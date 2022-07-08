@@ -48,17 +48,12 @@ class Cache :
 
     def acces(self,adr,mod) :
             valor = 0
-            if(mod == 1) :
-                valor = int(input("escriu valor : "))
             adr = dec(adr)
             print(adr)
             num_bloc = adr//Cache.t_bloc
             index = num_bloc % Cache.num_blocs
             etiq = num_bloc // Cache.num_blocs
             etiq = hex(etiq)
-            print(etiq)
-            if mod == 1 :
-                print("Escriptura a memoria")
             if (index in Cache.contingut and Cache.contingut[index].etiq == etiq) :
                 print("hit")
                 return True
@@ -66,9 +61,12 @@ class Cache :
 
                 if Cache.politica == 1:
                     Cache.contingut[index] = Bloc(self.t_bloc,etiq)
-                    self.contingut[index].escriure(valor)
-                print("miss")
+                print("miss"."escriptura a memoria")
                 return False
+            if(mod == 1) :
+                    print("Escriptura a  memoria")
+                    valor = int(input("escriu valor : "))
+                    self.contingut[index].escriure()
     def buidar(self) :
         self.contingut.clear()
 
