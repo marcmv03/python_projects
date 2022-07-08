@@ -69,11 +69,14 @@ class Cache :
                     self.contingut[index].escriure(valor)
                 print("miss")
                 return False
+    def buidar(self) :
+        self.contingut.clear()
 
     def escriure_contingut_bloc(self,i) :
+        print("contingut bloc",i,end =" ")
         if i in self.contingut :
             self.contingut[i].llegir()
-
+        else print("bloc buit")
 
     def escriure(self) :
         for i in range(Cache.num_blocs) :

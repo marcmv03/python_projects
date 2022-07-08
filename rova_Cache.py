@@ -25,7 +25,16 @@ while(op != "fi") :
         else:
             m += 1
         a += 1
-        op = str(input("comanda: "))
+    elif op == "etiquetes" :
+        print("contingut_cache:")
+        c.escriure()
+    elif op =="llegir_bloc":
+        i = int(input("num bloc : "))
+        c.escriure_contingut_bloc(i)
+    elif op =="buidar" :
+        c.buidar()
+
+    op = str(input("comanda: "))
 
 
 print("hit rate =",round(h/a,3),'\n',"miss rate =",round(m/a,3),'\n',end = '')
