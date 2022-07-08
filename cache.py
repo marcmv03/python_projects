@@ -59,7 +59,7 @@ class Cache :
             print(etiq)
             if mod == 1 :
                 print("Escriptura a memoria")
-            if (index in Cache.contingut and Cache.contingut[index] == etiq) :
+            if (index in Cache.contingut and Cache.contingut[index].etiq == etiq) :
                 print("hit")
                 return True
             else :
@@ -76,12 +76,12 @@ class Cache :
         print("contingut bloc",i,end =" ")
         if i in self.contingut :
             self.contingut[i].llegir()
-        else print("bloc buit")
+        else :print("bloc buit")
 
     def escriure(self) :
         for i in range(Cache.num_blocs) :
             if i in Cache.contingut :
-                print("Bloc",i, ':' ,Cache.contingut[i],end = ' ')
+                print("Bloc",i, ':' ,Cache.contingut[i].etiq,end = ' ')
                 print('\n')
             else :
                 print("Bloc" ,i,':',"buit",end = ' ')
