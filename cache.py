@@ -54,19 +54,22 @@ class Cache :
             index = num_bloc % Cache.num_blocs
             etiq = num_bloc // Cache.num_blocs
             etiq = hex(etiq)
+            b = False
             if (index in Cache.contingut and Cache.contingut[index].etiq == etiq) :
                 print("hit")
-                return True
+                b = True
             else :
 
                 if Cache.politica == 1:
                     Cache.contingut[index] = Bloc(self.t_bloc,etiq)
-                print("miss"."escriptura a memoria")
-                return False
+                print("miss",'\n',"escriptura a memoria")
+                b = False
             if(mod == 1) :
                     print("Escriptura a  memoria")
                     valor = int(input("escriu valor : "))
-                    self.contingut[index].escriure()
+                    self.contingut[index].escriure(valor)
+            return b
+
     def buidar(self) :
         self.contingut.clear()
 
