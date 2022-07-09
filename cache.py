@@ -17,9 +17,6 @@ def  dec (num) :
     r = 0
     i = len(num)-1
     while( i >= 0) :
-        if num[i] == '1':
-            r = r + p
-        p = 2*p
         r = r +char_to_hex(num[i])*p
         p = 16*p
         i = i -1
@@ -51,6 +48,8 @@ class Cache :
             adr = dec(adr)
             print(adr)
             num_bloc = adr//Cache.t_bloc
+            offsett = adr%self.t_bloc
+            print(offsett)
             index = num_bloc % Cache.num_blocs
             etiq = num_bloc // Cache.num_blocs
             etiq = hex(etiq)
@@ -67,7 +66,7 @@ class Cache :
             if(mod == 1) :
                     print("Escriptura a  memoria")
                     valor = int(input("escriu valor : "))
-                    self.contingut[index].escriure(valor)
+                    self.contingut[index].escriure(valor,offsett)
             return b
 
     def buidar(self) :
